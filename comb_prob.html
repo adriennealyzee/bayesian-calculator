@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<script type="text/javascript" src="d3/d3.js"></script> 
+	<script type="text/javascript" src="numeric-1.2.6.js"></script> 
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script> 
+	<script type="text/javascript" src="comb_prob.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+	
+</head>
+
+	<div class = "large_container">
+
+		<div class="intro_text">
+
+			<h1>A Colored Calculator for Bayesian Thinking</h1>
+
+			<p>
+				Bayesian updating is a central concept in which you have a set of beliefs, obtain new evidence, and update your beliefs. I've built an external aid aims to enhance your probabilistic thinking.
+			</p>
+
+			<p />
+
+			<h3>The Mission</h3>
+
+			<i>
+				<p>
+					Assume that you hold a Poker hand of 4 Kings and 1 Queen. Blindfolded, you randomly select one card from this hand. I then roll a fair die. If the die shows a number between 1 and 4, I will tell the truth; if the die shows 5 or 6, I will tell a lie. After rolling the die, I look at your card and say "King." 
+				</p>
+
+				<p>
+					Based on the number of Kings and Queens, the chances are 4/5 = 80% that your selected card is a King. Based on what I say after rolling the die, the chances are 4/6 = 67% that your selected card is a King.
+				</p>
+
+				What do you think the chances are that your selected card is a King, based on the evidence that the wizard says "King"?
+			</i>
+
+			<h3>Play</h3>
+		</div>
+
+		
+
+		
+
+		<br />
+
+		
+
+			<!-- ********* PRIOR ********* -->
+			<h3>1) Prior: Modeling the world before any new information</h3>
+
+			Assume you hold a Poker hand of 4 Kings and 1 Queen.<br />
+
+			<!-- Concrete --><br />
+			What is the probability that a randomly selected card will be a King?
+			<br /><br />
+			<div id="PRIOR_SILO_area_boxDays"></div>
+
+			<div id="area_for_boxprob_PRIOR_SILO">
+				<div class="probability_input">
+					<div id="PRIOR_SILO_p_rain_div">
+						<input name="PRIOR_SILO_p_rain" id="PRIOR_SILO_p_rain" placeholder="#">
+						<input id="PRIOR_SILO_p_rain_NOT" placeholder="#" readonly>
+					</div>
+				</div>
+			</div>
+
+			<p /><br />
+
+			<!-- ********* LIKELIHOOD ********* -->
+
+			<h3>2) Likelihood: Updating your model of the world, with new information</h3>
+			<p>A wizard knows what card you have selected and decides to help you. He rolls a die. Depending on the what number the die turns up, the wizard will either tell you the truth or lie to you.</p>
+
+			<div id="EVIDENCE_SILO_area_boxDays"></div>
+
+			<div id="area_for_boxprob_EVIDENCE_SILO">
+				<div class="probability_input">
+					<div id="EVIDENCE_SILO_p_rain_div">
+						<input name="EVIDENCE_SILO_p_rain" id="EVIDENCE_SILO_p_rain" placeholder="#">
+						<input id="EVIDENCE_SILO_p_rain_NOT" placeholder="#" readonly>
+					</div>
+				</div>
+			</div>
+
+			<!-- testing -->
+			<br /><br />
+
+			
+			<!-- <div id="area_for_boxprob_LIKELIHOOD_SILO">
+				<div class="probability_input">
+
+					<div id="LIKELIHOOD_SILO_p_rain_div">
+						<p>
+							P(hypothesis)
+						</p>
+						<input name="LIKELIHOOD_SILO_p_rain" id="LIKELIHOOD_SILO_p_rain" placeholder="80" readonly>
+						<input id="LIKELIHOOD_SILO_p_rain" placeholder="20" readonly>
+					</div>
+
+					<div id="LIKELIHOOD_SILO_p_sprinkler_rain_div">
+						P(evidence | hypothesis) =<br/ >
+						<input name="LIKELIHOOD_SILO_p_sprinkler_rain" id="LIKELIHOOD_SILO_p_sprinkler_rain" placeholder="(1) Enter a probability...">
+					</div>
+
+				</div>
+			</div> -->
+
+		<p /><br />
+
+		<div class="container">
+			<h4>Probability</h4>
+
+			<div id="area_boxDays"></div>
+
+			<div id="area_for_boxprob">
+				<div class="probability_input">
+
+				<div id="p_rain_div">
+					<p>
+						P(hypothesis)
+					</p>
+					<input name="p_rain" id="p_rain" placeholder="#">
+					<input id="p_rain_NOT" placeholder="#" readonly>
+				</div>
+
+				<div id="p_sprinkler_rain_div">
+					P(evidence | hypothesis) =<br/ >
+					<input name="p_sprinkler_rain" id="p_sprinkler_rain" placeholder="(1) Enter a probability...">
+				</div>
+
+				<br />
+
+				<div id="p_sprinkler_not_rain_div">
+					P(evidence | -hypothesis) =<br />
+					<input name="p_sprinkler_not_rain" id="p_sprinkler_not_rain" placeholder="(1) Enter a probability...">
+				</div>
+
+			</div>
+
+			</div>
+			<div id="area2">
+
+				<div class="probability_input2">
+				Alternate View
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+</html>
