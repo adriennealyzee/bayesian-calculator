@@ -1,1 +1,1 @@
-# bayesian_calc
+A colored calculator for Bayesian thinking.
